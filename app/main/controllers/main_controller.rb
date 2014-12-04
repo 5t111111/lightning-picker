@@ -1,8 +1,8 @@
+# coding: utf-8
 # By default Volt generates this controller for your Main component
 class MainController < Volt::ModelController
   def index
     # Add code for when the index view is loaded
-    page._results << { display: "boo" }
     page._display_result = false
   end
 
@@ -22,7 +22,7 @@ class MainController < Volt::ModelController
   def pick_up
     puts 'INFO: pick_up called.'
     person = page._persons.sample
-    puts person._name
+    page._spotlight = person._name
     page._persons.delete(person)
     page._picked_persons << { name: person._name }
     page._display_result = true
@@ -30,9 +30,11 @@ class MainController < Volt::ModelController
 
   def view_history
     puts 'INFO: view_history called.'
+    history_list = ''
     page._picked_persons.each_with_index do |person, i|
-      puts "#{i + 1}: #{person._name}"
+      history_list += "#{i + 1}: #{person._name}\n"
     end
+    alert history_list
   end
 
   def clear_history
