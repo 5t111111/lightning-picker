@@ -77,31 +77,35 @@ h1.title {
 }
 
 #result-wrap {
-  height:100%;
-  Background-color: black;
-  filter:alpha(opacity=90);
-  -moz-opacity: 0.9;
   opacity: 0.9;
-  text-align: center;
-  z-index: 1;
-  position: relative;
-  top: -400px;
-  margin-left: -500%;
-  margin-right: -500%;
-  padding-top: 180px;
-  padding-bottom: 100px;
-  padding-left: 500%;
-  padding-right: 500%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  zIndex: 1;
 }
 
 #result {
-  //font-size: 6.5em;
-  //color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  text-align: center;
+  font-size: 12.0rem;
   text-shadow: 0 0 20px yellow;
-  //margin-bottom: 150px;
+  padding-left: 2.0rem;
+  padding-right: 2.0rem;
 }
 
 #info-message {
-  float: right;
   font-size: 2.0rem;
+  padding-top: 3.0rem;
+  padding-left: 5.0rem;
 }
