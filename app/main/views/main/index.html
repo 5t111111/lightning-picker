@@ -22,5 +22,14 @@
       <form e-submit="clear_history" class="clear-history-form" role="form">
         <button type="submit" class="btn btn-warning">Clear history</button>
       </form>
+      {{ if page._display_result }}
+        <div id="result-wrap" e-click="hide_result">
+          <div id="result">
+            <div id="info-message">
+              Click to close
+            </div>
+          </div>
+        </div>
+      {{ end }}
     </div>
   </div>

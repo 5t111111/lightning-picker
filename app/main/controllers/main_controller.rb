@@ -2,6 +2,8 @@
 class MainController < Volt::ModelController
   def index
     # Add code for when the index view is loaded
+    page._results << { display: "boo" }
+    page._display_result = false
   end
 
   def about
@@ -9,7 +11,7 @@ class MainController < Volt::ModelController
   end
 
   def add_person
-    page._persons << {name: page._new_person}
+    page._persons << { name: page._new_person }
     page._new_person = ''
   end
 
@@ -23,6 +25,7 @@ class MainController < Volt::ModelController
     puts person._name
     page._persons.delete(person)
     page._picked_persons << { name: person._name }
+    page._display_result = true
   end
 
   def view_history
@@ -34,9 +37,14 @@ class MainController < Volt::ModelController
 
   def clear_history
     puts 'INFO: clear_history called.'
-    result = `confirm('Are you sure you want to clear history? (This action cannot be undone)');`
-    return unless result
+    answer = `confirm('Are you sure you want to clear history? (This action cannot be undone)');`
+    return unless answer
     page._picked_persons.clear
+  end
+
+  def hide_result
+    puts 'INFO: hide_result called.'
+    page._display_result = false
   end
 
   private
