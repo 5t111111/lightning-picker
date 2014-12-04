@@ -1,1 +1,77 @@
 // Place your apps css here
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope);
+
+// variables
+$em-normalize-ratio: 62.5%;
+
+// mixins
+@mixin btn-on-center {
+  text-align: center;
+}
+
+html {
+  font-size: $em-normalize-ratio;
+}
+
+body {
+  background-color: black;
+  background-image: url('/assets/images/background.png');
+  font-family: Lato, 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 3.2rem;
+  color: white;
+}
+
+h1.title {
+  font-family: 'Annie Use Your Telescope', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 6.5rem;
+  color: white;
+  text-shadow: 0 0 20px yellow;
+  text-align: center;
+  margin-top: 2.0rem;
+}
+
+
+.add-person-form {
+  @include btn-on-center;
+  margin-top: 6.0rem;
+
+}
+
+.persons {
+  margin-top: 4.0rem;
+  line-height: 5.0rem;
+}
+
+.remove-btn {
+  font-size: 1.2rem;
+  margin-left: .5rem;
+  padding: .3rem .6rem;
+}
+
+.pick-up-form {
+  @include btn-on-center;
+  margin-top: 4.0rem;
+}
+
+.pick-up-btn {
+  font-size: 2.8rem;
+  padding: 2.0rem 2.0rem;
+}
+
+.view-history-form {
+  @include btn-on-center;
+  margin-top: 4.0rem;
+}
+
+.clear-history-form {
+  @include btn-on-center;
+  margin-top: 1.5rem;
+}
+
+.footer {
+  font-size: 1.6rem;
+  margin-top: 6.0rem;
+}
