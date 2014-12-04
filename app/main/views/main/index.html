@@ -1,6 +1,35 @@
 <:Title>
-  Home
+  Lightning Picker
 
 <:Body>
-  <h1>Home</h1>
-
+  <div class="row">
+    <div class="col-xs-18 col-md-12">
+      <h1 class="title">Lightning Picker</h1>
+      <form e-submit="add_person" role="form">
+        <div class="form-group">
+          <input class="form-control" type="text" value="{{ page._new_person }}" />
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+      <ul class="list-inline">
+        {{ page._persons.each do |person| }}
+          <li>{{ person._name }}<button e-click="remove_person(person)">X</button></li>
+        {{ end }}
+      </ul>
+      <form e-submit="pick_up" role="form">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">Ready? Let's pick someone!</button>
+        </div>
+      </form>
+      <form e-submit="view_history" role="form">
+        <div class="form-group">
+          <button type="submit" class="btn btn-info">View history</button>
+        </div>
+      </form>
+      <form e-submit="clear_history" role="form">
+        <div class="form-group">
+          <button type="submit" class="btn btn-warning">Clear history</button>
+        </div>
+      </form>
+    </div>
+  </div>
