@@ -12,6 +12,36 @@ $em-normalize-ratio: 62.5%;
   text-align: center;
 }
 
+@mixin animation-settings($name, $duration) {
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -ms-animation-name: $name;
+  -ms-animation-duration: $duration;
+}
+
+@mixin fadein-animation {
+  from {
+    color: yellow;
+    font-size: 0rem;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    font-size: 20.0rem;
+  }
+  75% {
+    color: yellow;
+  }
+  to {
+    color: white;
+    opacity: 1.0;
+  }
+}
+
 html {
   font-size: $em-normalize-ratio;
 }
@@ -96,7 +126,7 @@ h1.title {
   margin: auto;
   width: 100%;
   overflow: hidden;
-  height: 300px;
+  height: 600px;
   text-align: center;
   font-size: 12.0rem;
   text-shadow: 0 0 20px yellow;
@@ -108,4 +138,25 @@ h1.title {
   font-size: 2.0rem;
   padding-top: 3.0rem;
   padding-left: 5.0rem;
+}
+
+#spotlight-person {
+  @include animation-settings(fadein, 3s);
+}
+
+
+@-webkit-keyframes fadein {
+  @include fadein-animation
+}
+
+@-moz-keyframes fadein {
+  @include fadein-animation
+}
+
+@-ms-keyframes fadein {
+  @include fadein-animation
+}
+
+@keyframes fadein {
+  @include fadein-animation
 }
