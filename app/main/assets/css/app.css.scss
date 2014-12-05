@@ -212,3 +212,8 @@ h1.title {
 @-webkit-keyframes snow {
   @include snow-animation
 }
+
+.footer {
+  text-align: center;
+  font-size: 1.4rem;
+}

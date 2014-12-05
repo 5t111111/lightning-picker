@@ -1,4 +1,3 @@
-# coding: utf-8
 # By default Volt generates this controller for your Main component
 class MainController < Volt::ModelController
   model :store
@@ -26,6 +25,7 @@ class MainController < Volt::ModelController
   def pick_up
     puts 'INFO: pick_up called.'
     return if _persons.size == 0
+    return if _display_result == true
     person = _persons.sample
     self._spotlight_person = person._name
     _persons.delete(person)
