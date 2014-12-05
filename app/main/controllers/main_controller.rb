@@ -1,3 +1,4 @@
+# coding: utf-8
 # By default Volt generates this controller for your Main component
 class MainController < Volt::ModelController
   model :store
@@ -29,6 +30,19 @@ class MainController < Volt::ModelController
     _persons.delete(person)
     _picked_persons << person
     self._display_result = true
+  end
+
+  def adjust_modal_to_center
+    puts 'INFO: pick_up called.'
+    window_width = Window.width
+    window_height = Window.height
+    content_width = `$("#modal-content").outerWidth(true);`
+    content_height = `$("#modal-content").outerHeight(true);`
+    left_pos = ((window_width - content_width) / 2)
+    top_pos = ((window_height - content_height) / 2)
+    Element.find('#modal-content').css('left', left_pos.to_s + 'px')
+    Element.find('#modal-content').css('top', (top_pos - 200).to_s + 'px')
+    nil
   end
 
   def view_history

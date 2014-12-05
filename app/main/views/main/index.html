@@ -36,15 +36,14 @@
       </form>
     </div>
   </div>
-  <div class="row">
-    {{ if _display_result }}
-      <div id="overlay" e-click="hide_result">
-        <div id="result">
-          <span id="spotlight-person">{{ _spotlight_person }}</span>
-        </div>
-        <div id="info-message">
-          Click to close
-        </div>
+  {{ if _display_result }}
+    <div id="modal-overlay" e-click="hide_result">
+      <div id="modal-content">
+        <span id="spotlight-person">{{ _spotlight_person }}</span>
       </div>
-    {{ end }}
-  </div>
+      <div id="info-message">
+        Click to close
+      </div>
+    </div>
+    {{ adjust_modal_to_center }}
+  {{ end }}
