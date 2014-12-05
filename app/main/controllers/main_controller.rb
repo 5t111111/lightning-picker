@@ -1,9 +1,10 @@
-# coding: utf-8
 # By default Volt generates this controller for your Main component
 class MainController < Volt::ModelController
+  model :page
+
   def index
     # Add code for when the index view is loaded
-    page._display_result = false
+    _display_result = false
   end
 
   def about
@@ -11,27 +12,29 @@ class MainController < Volt::ModelController
   end
 
   def add_person
-    page._persons << { name: page._new_person }
-    page._new_person = ''
+    puts 'INFO: add_person called.'
+    _persons << { name: _new_person }
+    self._new_person = ''
   end
 
   def remove_person(person)
-    page._persons.delete(person)
+    puts 'INFO: remove_person called.'
+    _persons.delete(person)
   end
 
   def pick_up
     puts 'INFO: pick_up called.'
-    person = page._persons.sample
-    page._spotlight = person._name
-    page._persons.delete(person)
-    page._picked_persons << { name: person._name }
-    page._display_result = true
+    return unless person = _persons.sample
+    self._spotlight_person = person._name
+    _persons.delete(person)
+    _picked_persons << { name: person._name }
+    self._display_result = true
   end
 
   def view_history
     puts 'INFO: view_history called.'
     history_list = ''
-    page._picked_persons.each_with_index do |person, i|
+    _picked_persons.each_with_index do |person, i|
       history_list += "#{i + 1}: #{person._name}\n"
     end
     alert history_list
@@ -41,12 +44,12 @@ class MainController < Volt::ModelController
     puts 'INFO: clear_history called.'
     answer = `confirm('Are you sure you want to clear history? (This action cannot be undone)');`
     return unless answer
-    page._picked_persons.clear
+    _picked_persons.clear
   end
 
   def hide_result
     puts 'INFO: hide_result called.'
-    page._display_result = false
+    self._display_result = false
   end
 
   private

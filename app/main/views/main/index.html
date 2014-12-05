@@ -6,11 +6,11 @@
     <div class="col-xs-18 col-md-12">
       <h1 class="title">Lightning Picker</h1>
       <form e-submit="add_person" class="add-person-form" role="form">
-        <input class="form-control span2" type="text" placeholder="Input name and press enter" value="{{ page._new_person }}" />
+        <input class="form-control span2" type="text" placeholder="Input name and press enter" value="{{ _new_person }}" />
       </form>
       <ul class="list-inline persons">
-        {{ page._persons.each do |person| }}
-          <li>{{ person._name }}<button e-click="remove_person(person)" class="btn btn-warning remove-btn">X</button></li>
+        {{ _persons.each do |person| }}
+          <li>{{ person._name }}<button e-click="remove_person(person)" class="btn btn-warning remove-btn">x</button></li>
         {{ end }}
       </ul>
       <form e-submit="pick_up" class="pick-up-form" role="form">
@@ -23,10 +23,10 @@
         <button type="submit" class="btn btn-warning">Clear history</button>
       </form>
     </div>
-    {{ if page._display_result }}
+    {{ if _display_result }}
       <div id="overlay" e-click="hide_result">
         <div id="result">
-          {{ page._spotlight }}
+          <span id="spotlight-person">{{ _spotlight_person }}</span>
         </div>
         <div id="info-message">
           Click to close
