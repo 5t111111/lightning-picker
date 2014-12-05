@@ -8,21 +8,35 @@
       <form e-submit="add_person" class="add-person-form" role="form">
         <input class="form-control span2" type="text" placeholder="Input name and press enter" value="{{ _new_person }}" />
       </form>
-      <ul class="list-inline persons">
-        {{ _persons.each do |person| }}
-          <li>{{ person._name }}<button e-click="remove_person(person)" class="btn btn-warning remove-btn">x</button></li>
-        {{ end }}
-      </ul>
+      <div class="persons-wrapper">
+        <ul class="list-inline persons">
+          {{ _persons.each do |person| }}
+            <li>{{ person._name }}<button e-click="remove_person(person)" class="btn btn-warning remove-btn">x</button></li>
+          {{ end }}
+        </ul>
+      </div>
+      <!--
+      <div class="already-picked-wrapper">
+	<h2>Persons already picked up</h2>
+        <ul class="list-inline already-picked">
+          {{ _picked_persons.each do |person| }}
+            <li>{{ _picked_persons.index(person) + 1 }}: {{ person._name }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      -->
       <form e-submit="pick_up" class="pick-up-form" role="form">
         <button type="submit" class="btn btn-primary btn-lg pick-up-btn">Ready? Let's pick someone!</button>
-      </form>
-      <form e-submit="view_history" class="view-history-form" role="form">
-        <button type="submit" class="btn btn-info">View history</button>
       </form>
       <form e-submit="clear_history" class="clear-history-form" role="form">
         <button type="submit" class="btn btn-warning">Clear history</button>
       </form>
+      <form e-submit="view_history" class="view-history-form" role="form">
+        <button type="submit" class="btn btn-info">View history</button>
+      </form>
     </div>
+  </div>
+  <div class="row">
     {{ if _display_result }}
       <div id="overlay" e-click="hide_result">
         <div id="result">

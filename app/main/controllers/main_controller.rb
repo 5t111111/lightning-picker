@@ -44,9 +44,11 @@ class MainController < Volt::ModelController
     puts 'INFO: clear_history called.'
     answer = `confirm('Are you sure you want to clear history? (This action cannot be undone)');`
     return unless answer
-    _picked_persons.each do |person|
-      puts person._name if person
-      _picked_persons.delete(person) if person
+    # workaround for some items remain after delete
+    while _picked_persons.size != 0
+      _picked_persons.each do |person|
+        _picked_persons.delete(person) if person
+      end
     end
   end
 
