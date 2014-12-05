@@ -33,7 +33,7 @@ class MainController < Volt::ModelController
   end
 
   def adjust_modal_to_center
-    puts 'INFO: pick_up called.'
+    puts 'INFO: adjust_modal_to_center called.'
     window_width = Window.width
     window_height = Window.height
     content_width = `$("#modal-content").outerWidth(true);`
