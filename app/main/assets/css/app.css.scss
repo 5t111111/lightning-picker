@@ -70,6 +70,11 @@ h1.title {
   @include btn-on-center;
   margin-top: 6.0rem;
 
+  input {
+    width: 50%;
+    min-width: 280px;
+    margin: 0 auto;
+  }
 }
 
 .persons {
@@ -89,7 +94,7 @@ h1.title {
 }
 
 .pick-up-btn {
-  font-size: 2.8rem;
+  font-size: 2.0rem;
   padding: 2.0rem 2.0rem;
 }
 
@@ -118,10 +123,11 @@ h1.title {
   background: rgba(0, 0, 0, 0.8);
   background-image: url('/assets/images/snow.png');
   background-color: rgba(0, 0, 0, 0.8);
-  zIndex: 1;
+  z-index: 1;
   animation: snow 30s linear infinite;
   -moz-animation: snow 30s linear infinite;
   -webkit-animation: snow 30s linear infinite;
+  cursor: pointer;
 
 }
 

@@ -1,6 +1,6 @@
 # By default Volt generates this controller for your Main component
 class MainController < Volt::ModelController
-  model :page
+  model :store
 
   def index
     # Add code for when the index view is loaded
@@ -27,7 +27,7 @@ class MainController < Volt::ModelController
     return unless person = _persons.sample
     self._spotlight_person = person._name
     _persons.delete(person)
-    _picked_persons << { name: person._name }
+    _picked_persons << person
     self._display_result = true
   end
 
@@ -44,7 +44,10 @@ class MainController < Volt::ModelController
     puts 'INFO: clear_history called.'
     answer = `confirm('Are you sure you want to clear history? (This action cannot be undone)');`
     return unless answer
-    _picked_persons.clear
+    _picked_persons.each do |person|
+      puts person._name if person
+      _picked_persons.delete(person) if person
+    end
   end
 
   def hide_result
