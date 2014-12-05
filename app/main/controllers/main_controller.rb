@@ -25,7 +25,8 @@ class MainController < Volt::ModelController
 
   def pick_up
     puts 'INFO: pick_up called.'
-    return unless person = _persons.sample
+    return if _persons.size == 0
+    person = _persons.sample
     self._spotlight_person = person._name
     _persons.delete(person)
     _picked_persons << person
@@ -41,7 +42,7 @@ class MainController < Volt::ModelController
     left_pos = ((window_width - content_width) / 2)
     top_pos = ((window_height - content_height) / 2)
     Element.find('#modal-content').css('left', left_pos.to_s + 'px')
-    Element.find('#modal-content').css('top', (top_pos - 200).to_s + 'px')
+    Element.find('#modal-content').css('top', (top_pos - (window_height / 6)).to_s + 'px')
     nil
   end
 
