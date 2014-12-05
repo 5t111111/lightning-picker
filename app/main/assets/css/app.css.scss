@@ -12,15 +12,6 @@ $em-normalize-ratio: 62.5%;
   text-align: center;
 }
 
-@mixin animation-settings($name, $duration) {
-  -webkit-animation-name: $name;
-  -webkit-animation-duration: $duration;
-  -moz-animation-name: $name;
-  -moz-animation-duration: $duration;
-  -ms-animation-name: $name;
-  -ms-animation-duration: $duration;
-}
-
 @mixin fadein-animation {
   from {
     color: yellow;
@@ -31,14 +22,25 @@ $em-normalize-ratio: 62.5%;
     opacity: 0.1;
   }
   50% {
+    color: yellow;
     font-size: 20.0rem;
   }
   75% {
     color: yellow;
+    font-size: 20.0rem;
   }
   to {
     color: white;
     opacity: 1.0;
+  }
+}
+
+@mixin snow-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position:500px 500px;
   }
 }
 
@@ -107,14 +109,20 @@ h1.title {
 }
 
 #overlay {
-  opacity: 0.9;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background-color: #000;
+  background: rgba(0, 0, 0, 0.8);
+  background-image: url('/assets/images/snow.png');
+  background-color: rgba(0, 0, 0, 0.8);
   zIndex: 1;
+  animation: snow 30s linear infinite;
+  -moz-animation: snow 30s linear infinite;
+  -webkit-animation: snow 30s linear infinite;
+
 }
 
 #result {
@@ -136,14 +144,19 @@ h1.title {
 
 #info-message {
   font-size: 2.0rem;
+  color: #aaa;
   padding-top: 3.0rem;
   padding-left: 5.0rem;
 }
 
 #spotlight-person {
-  @include animation-settings(fadein, 3s);
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 5s;
+  -moz-animation-name: fadein;
+  -moz-animation-duration: 5s;
+  -ms-animation-name: fadein;
+  -ms-animation-duration: 5s;
 }
-
 
 @-webkit-keyframes fadein {
   @include fadein-animation
@@ -159,4 +172,16 @@ h1.title {
 
 @keyframes fadein {
   @include fadein-animation
+}
+
+@keyframes snow {
+  @include snow-animation
+}
+
+@-moz-keyframes snow {
+  @include snow-animation
+}
+
+@-webkit-keyframes snow {
+  @include snow-animation
 }
