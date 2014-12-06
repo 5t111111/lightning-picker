@@ -58,13 +58,18 @@ body {
   color: white;
 }
 
-h1.title {
-  font-family: 'Annie Use Your Telescope', 'Helvetica Neue', 'Arial', sans-serif;
-  font-size: 6.5rem;
-  color: white;
-  text-shadow: 0 0 20px yellow;
-  text-align: center;
-  margin-top: 2.0rem;
+.header {
+  margin-bottom: 0;
+  border: none;
+
+  h1.title {
+    font-family: 'Annie Use Your Telescope', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 6.5rem;
+    color: white;
+    text-shadow: 0 0 20px yellow;
+    text-align: center;
+    margin-top: 2.0rem;
+  }
 }
 
 .add-person-form {
