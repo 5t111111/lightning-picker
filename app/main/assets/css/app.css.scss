@@ -67,7 +67,6 @@ h1.title {
   margin-top: 2.0rem;
 }
 
-
 .add-person-form {
   @include btn-on-center;
   margin-top: 6.0rem;
@@ -83,8 +82,12 @@ h1.title {
   margin-top: 4.0rem;
 
   .persons {
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 19.0rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('/assets/images/powered-by-volt.png');
+    background-position: center center; 
+    background-repeat: no-repeat;
+    //height: 19.0rem;
+    height: 200px;
     line-height: 5.0rem;
     overflow: scroll;
     padding: 1.0rem 1.5rem;
@@ -111,7 +114,6 @@ h1.title {
   }
 }
 
-
 .pick-up-form {
   @include btn-on-center;
   margin-top: 4.0rem;
@@ -132,7 +134,6 @@ h1.title {
   @extend .clear-history-form;
   margin-right: 1.2rem;
 }
-
 
 .footer {
   font-size: 1.6rem;
