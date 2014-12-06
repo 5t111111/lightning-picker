@@ -6,7 +6,7 @@ class MainController < Volt::ModelController
     # Add code for when the index view is loaded
     self._display_result = false
     self._display_history = false
-    self._history_button_text = 'View history'
+    self._history_button_text = 'Show history'
   end
 
   def about
@@ -52,7 +52,7 @@ class MainController < Volt::ModelController
     puts 'INFO: toggle_history called.'
     if self._display_history
       self._display_history = false
-      self._history_button_text = 'View history'
+      self._history_button_text = 'Show history'
     else
       self._display_history = true
       self._history_button_text = 'Hide history'
