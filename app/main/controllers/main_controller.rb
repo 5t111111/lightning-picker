@@ -4,7 +4,9 @@ class MainController < Volt::ModelController
 
   def index
     # Add code for when the index view is loaded
-    _display_result = false
+    self._display_result = false
+    self._display_history = false
+    self._history_button_text = 'View history'
   end
 
   def about
@@ -46,13 +48,15 @@ class MainController < Volt::ModelController
     nil
   end
 
-  def view_history
-    puts 'INFO: view_history called.'
-    history_list = ''
-    _picked_persons.each_with_index do |person, i|
-      history_list += "#{i + 1}: #{person._name}\n"
+  def toggle_history
+    puts 'INFO: toggle_history called.'
+    if self._display_history
+      self._display_history = false
+      self._history_button_text = 'View history'
+    else
+      self._display_history = true
+      self._history_button_text = 'Hide history'
     end
-    alert history_list
   end
 
   def clear_history

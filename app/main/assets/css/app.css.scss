@@ -104,20 +104,6 @@ body {
   }
 }
 
-.already-picked-wrapper {
-  margin-top: 4.0rem;
-
-  .already-picked {
-    color: #888;
-    font-size: 1.6rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    height: 12.0rem;
-    line-height: 3.0rem;
-    overflow: scroll;
-    padding: .5rem 1.0rem;
-  }
-}
-
 .pick-up-form {
   @include btn-on-center;
   margin-top: 4.0rem;
@@ -134,7 +120,7 @@ body {
   float: right;
 }
 
-.view-history-form {
+.toggle-history-form {
   @extend .clear-history-form;
   margin-right: 1.2rem;
 }
@@ -216,6 +202,22 @@ body {
 
 @-webkit-keyframes snow {
   @include snow-animation
+}
+
+.history-wrapper {
+  margin-top: 4.0rem;
+
+  .history {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('/assets/images/powered-by-volt.png');
+    background-position: center center; 
+    background-repeat: no-repeat;
+    //height: 19.0rem;
+    height: 200px;
+    line-height: 5.0rem;
+    overflow: scroll;
+    padding: 1.0rem 1.5rem;
+  }
 }
 
 .footer {
