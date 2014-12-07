@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% javascript_files.each do |javascript_file| %>
-      <script src="<%= javascript_file %>"></script>
+    <script src="<%= javascript_file %>"></script>
     <% end %>
-
     <% css_files.each do |css_file| %>
-      <link href="<%= css_file %>" media="all" rel="stylesheet" type="text/css" />
+    <link href="<%= css_file %>" media="all" rel="stylesheet" type="text/css" />
     <% end %>
-
-	</head>
-	<body>
-
-	</body>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png"/>
+  </head>
+  <body>
+  </body>
 </html>
