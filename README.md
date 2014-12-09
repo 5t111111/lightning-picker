@@ -1,3 +1,3 @@
-# Start your docs here.
+# Lightning Picker
 
-# See Volt docs at https://github.com/voltrb/volt/blob/master/Readme.md
+http://lightning-picker.nilsteps.com
