@@ -20,6 +20,3 @@ platform :mri do
   gem 'thin', '~> 1.6.0'
   gem 'bson_ext', '~> 1.9.0'
 end
-
-# Heroku New Relic
-gem 'newrelic_rpm'

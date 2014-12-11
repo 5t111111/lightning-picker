@@ -41,7 +41,6 @@ GEM
     mongo (1.9.2)
       bson (~> 1.9.2)
     multi_json (1.10.1)
-    newrelic_rpm (3.9.7.266)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     opal (0.6.3)
@@ -101,7 +100,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    uglifier (2.5.3)
+    uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     volt (0.8.23)
@@ -150,7 +149,6 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext (~> 1.9.0)
-  newrelic_rpm
   thin (~> 1.6.0)
   volt (= 0.8.23)
   volt-bootstrap
