@@ -100,7 +100,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    uglifier (2.5.3)
+    uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     volt (0.8.23)
