@@ -1,16 +1,15 @@
 <:Title>
-  {{ template main_path, "title", {controller_group: 'main'} }}
+  {{ view main_path, "title", {controller_group: 'main'} }}
 
 <:Body>
   <div class="container">
-
     <div class="header">
       <h1 class="title">Lightning Picker</h1>
     </div>
 
     <:volt:notices />
 
-    {{ template main_path, 'body', {controller_group: 'main'} }}
+    {{ view main_path, 'body', {controller_group: 'main'} }}
 
     <div class="footer">
       <p>&copy; 2014 - Lightning Picker (Winter Version)</p>
@@ -19,7 +18,7 @@
   </div>
 
 <:Nav>
-  <li class="{{ if url.path.split('/')[1] == attrs.href.split('/')[1] }}active{{ end }}">
-    <a href="{{ attrs.href }}">{{ attrs.text }}</a>
+  <li class="{{ if active_tab? }}active{{ end }}">
+    <a href="{{ attrs.href }}">{{ yield }}</a>
   </li>
 

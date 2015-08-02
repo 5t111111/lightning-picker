@@ -21,11 +21,11 @@
         <button type="submit" class="btn btn-warning">Clear history</button>
       </form>
       <form e-submit="toggle_history" class="toggle-history-form" role="form">
-        <button type="submit" class="btn btn-info">{{ _history_button_text }}</button>
+        <button type="submit" class="btn btn-info">{{ history_button_text }}</button>
       </form>
     </div>
   </div>
-  {{ if _display_result }}
+  {{ if display_result }}
     <div id="modal-overlay" e-click="hide_result">
       <div id="modal-content">
         <span id="spotlight-person">{{ _spotlight_person }}</span>
@@ -36,7 +36,7 @@
     </div>
     {{ adjust_modal_to_center }}
   {{ end }}
-  {{ if _display_history }}
+  {{ if display_history }}
     <div class="history-wrapper">
       <ul class="list-inline history">
         {{ _picked_persons.each do |person| }}
