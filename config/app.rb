@@ -129,4 +129,14 @@ Volt.configure do |config|
   # timeout's.  Setting this to short can cause unexpected results, currently
   # we recomend it be at least 10 seconds.
   # config.worker_timeout = 60
+
+  config.db_driver = 'mongo'
+  config.db_name = (config.app_name + '_' + Volt.env.to_s)
+
+  if ENV['MONGOHQ_URL'].present?
+    config.db_uri = ENV['MONGOHQ_URL']
+  else
+    config.db_host = 'localhost'
+    config.db_port = 27017
+  end
 end
