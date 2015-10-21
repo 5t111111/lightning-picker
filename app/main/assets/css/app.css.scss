@@ -52,7 +52,7 @@ html {
 
 body {
   background-color: black;
-  background-image: url('/assets/images/background.png');
+  background-image: asset-url('../images/background.png');
   font-family: Lato, 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.8rem;
   color: white;
@@ -87,8 +87,8 @@ body {
 
   .persons {
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('/assets/images/powered-by-volt.png');
-    background-position: center center; 
+    background-image: asset-url('../images/powered-by-volt.png');
+    background-position: center center;
     background-repeat: no-repeat;
     //height: 19.0rem;
     height: 200px;
@@ -152,7 +152,7 @@ body {
   left: 0;
   width: 100%;
   height: 120%;
-  background-image: url('/assets/images/snow.png');
+  background-image: asset-url('../images/snow.png');
   background-color: rgba(0, 0, 0, 0.8);
   animation: snow 30s linear infinite;
   -moz-animation: snow 30s linear infinite;
@@ -209,8 +209,8 @@ body {
 
   .history {
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('/assets/images/powered-by-volt.png');
-    background-position: center center; 
+    background-image: asset-url('../images/powered-by-volt.png');
+    background-position: center center;
     background-repeat: no-repeat;
     //height: 19.0rem;
     height: 200px;
@@ -230,5 +230,5 @@ body {
   width: 0px;
   height: 0px;
   display: inline;
-  background-image: url('/assets/images/snow.png');
+  background-image: asset-url('../images/snow.png');
 }
